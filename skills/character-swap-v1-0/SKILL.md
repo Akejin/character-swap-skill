@@ -13,19 +13,6 @@ description: "Replace a person in a supplied scene photo with a person shown in 
 - **表演（表情/视线/头部朝向/肢体动作）与面部光影**：逐项复刻场景原图里的原人物；
 - **场景其余一切**（背景/光线/他人/文字）：逐像素保留。
 
-## ⚙️ 图像生成工具（ZCode 环境必读）
-
-本技能是**双参考图编辑**技能：出图模型必须同时看到「场景图 + 人物样片」。在 ZCode 中通过 MCP 工具完成：
-
-- **首选：`mcp__seedream-image__image_to_image`**（火山方舟 Seedream 5.0，多参考图）
-  - `refImage`：**图 1 场景图**的本地绝对路径（被替换人物所在的原图）。
-  - `refImages`：**人物样片**路径数组，按顺序 1-2 张（图 2 / 图 3）。**顺序不可颠倒**：固定图 1 = 场景、图 2 起 = 人物样片。
-  - `prompt`：下方模板编译出的固定指令（含用户附加文字）。
-  - `saveTo`：输出绝对路径（如 `/tmp/character-swap-<时间戳>.jpeg`）。
-  - `model`：默认 `pro`（人脸身份保真最佳；该 MCP 的 pro 仅 1K 档）；需要更高分辨率时用 `lite` + `size: 2k`。
-- **备选：`mcp__nano-banana__image_to_image` / `mcp__gpt-image__image_to_image`**（均支持 `refImage` + `refImages` 多图，人脸一致性好；生成速度较慢，2K/双图可能需要数分钟）。
-- `mcp__qwen-image__image_to_image` 仅支持单张参考图，**不适用**本技能。
-- 生成后用 `![移形换影](saveTo路径)` 展示，再附上一段中文创作说明。
 
 ## Standing Consent and Privacy
 
@@ -149,7 +136,7 @@ person.
 
 ## Generation Workflow
 
-1. **先用视觉工具读图（必做，不可跳过）。** 分别调用 `mcp__glm-vision__describe_image` 读图 1（场景）与人物样片：确认图 1 中人物数量与各自位置、原人物视线目标、样片人脸是否清晰可用。**这一步只做任务校验（人物数量/映射/样片可用性），不生成提示词**——提示词固定为上方模板。多人场景（≥3 人）或映射不明时，先向用户确认「谁替换谁」。
+1. **先用识别图片（必做，不可跳过）。**  读图 1（场景）与人物样片：确认图 1 中人物数量与各自位置、原人物视线目标、样片人脸是否清晰可用。**这一步只做任务校验（人物数量/映射/样片可用性），不生成提示词**——提示词固定为上方模板。多人场景（≥3 人）或映射不明时，先向用户确认「谁替换谁」。
 2. 选择模板分支（单人物 / 双人物），拼接 USER INSTRUCTION。
 3. 按固定顺序调用出图工具：`refImage` = 场景图，`refImages` = 人物样片（1-2 张，按映射顺序）。
 4. 检查结果（对照 Quality Gate）。
