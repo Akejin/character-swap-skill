@@ -63,8 +63,6 @@
 
 Skill 本身不生成图像，编译固定指令后调用环境中的 MCP 生图工具：
 
-- **首选** `seedream-image`（火山 Seedream 5.0，多参考图，人脸身份保真最佳）；
-- 备选 `nano-banana` / `gpt-image`（多参考图，一致性好，速度较慢）。
 
 人物样片请尽量使用正脸、五官清晰的照片；比例默认跟随场景原图。
 
@@ -102,7 +100,6 @@ character-swap-skill/
 ├── README.en.md
 ├── LICENSE
 ├── examples/
-│   └── README.md
 └── skills/
     └── character-swap-v1-0/
         ├── SKILL.md
@@ -113,13 +110,15 @@ character-swap-skill/
 
 Skill 只把用户提供的场景照片与人物样片作为当前替换任务的参考。除非用户明确要求，不应浏览、分享、另行上传或保存这些照片，也不将人物样片用于本次替换之外的任何用途。有关具体处理规则，请阅读 [Skill 文档](skills/character-swap-v1-0/SKILL.md)。
 
-## 找到作者
+## 更多 AI 图像玩法
 
-**作者：Akejin**
+如果你想继续玩 AI 图像，可以试试 **Imagin AI**（[www.imaginai.art](https://www.imaginai.art)）——一个**多风格技能通用文生图网页应用**：在网页上输入文字或导入参考图，选择风格技能，即可生成对应风格的海报/艺术作品，不用本地部署。
 
-抖音及其他内容平台统一用户名：`Akejin`。在你常用的平台搜索这个名字，即可找到作者与后续作品。
 
-使用本 Skill 创作的作品如公开发布，欢迎在配文末尾轻轻标注：`Visual Skill by @Akejin`。
+> 移形换影负责"换人"这一步——把场景里的人物替换成你指定的人；替换完成后想继续做风格化和延伸创作，Imagin AI 是个顺手的选择。
+
+*Imagin AI 是独立于本 Skill 的第三方站点，把照片上传到任何外部平台前，建议先看一下对方的隐私政策。*
+
 
 ## License
 

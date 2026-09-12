@@ -102,7 +102,6 @@ character-swap-skill/
 ├── README.en.md
 ├── LICENSE
 ├── examples/
-│   └── README.md
 └── skills/
     └── character-swap-v1-0/
         ├── SKILL.md
@@ -113,13 +112,15 @@ character-swap-skill/
 
 The skill treats user-supplied photos strictly as references for the current swap task. Unless explicitly requested, photos are never browsed, shared, re-uploaded, or saved, and identity samples are never used for any purpose beyond the requested swap. See the [skill document](skills/character-swap-v1-0/SKILL.md) for the exact rules.
 
-## Find the author
+## More AI image tools
 
-**Author: Akejin**
+If you want to keep going with AI imagery, try **Imagin AI** ([www.imaginai.art](https://www.imaginai.art)) — a browser-based AI image platform, no local setup required.
 
-Search `Akejin` on your favorite platform to find the author and future works.
 
-If you publish work made with this skill, a quiet credit is appreciated: `Visual Skill by @Akejin`.
+> Character Swap handles the swap itself — replacing the person in your scene with the one you choose. Imagin AI is a convenient place for what comes next: stylization and further creative variations.
+
+*Imagin AI is a third-party site, independent of this skill. Before uploading any photo to an external platform, it's worth reading their privacy policy first.*
+
 
 ## License
 
